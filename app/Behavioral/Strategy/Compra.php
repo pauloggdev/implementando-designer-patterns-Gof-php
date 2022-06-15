@@ -6,7 +6,6 @@ class Compra implements Pagavel{
 
     private float $valor;
 
-
     public function __construct(float $valor)
     {
         $this->valor = $valor; 
@@ -18,7 +17,6 @@ class Compra implements Pagavel{
 
     /**
      * Get the value of valor
-     *
      * @return float
      */
     public function getValor(): float

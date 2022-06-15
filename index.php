@@ -3,6 +3,9 @@
 use App\Behavioral\Strategy\Compra;
 use App\Behavioral\Strategy\PagamentoCartaoCredito;
 use App\Behavioral\Strategy\PagamentoCartaoDebito;
+use App\Creational\factory_method\Payment;
+use App\Creational\factory_method\TypePayment;
+use App\Creational\factory_method\TypePaymentFactory;
 use App\Structural\BrigdeMethod\ArrayConverter;
 use App\Structural\BrigdeMethod\ITGuy;
 use App\Structural\BrigdeMethod\JsonConverter;
@@ -58,5 +61,10 @@ echo "<br>";
 echo "<br>";
 echo "<br>";
 echo "<br>";
-echo "-----------------------[STRUCTURAL] - ADAPTER ---------------------------";
+echo "-----------------------[CREATIONAL] - FACTORY_METHOD ---------------------------";
 echo "<br>";
+
+
+$typePayment = TypePaymentFactory::createTypePayment('DEBIT');
+$payment = new Payment();
+$payment->processPayment($typePayment);
